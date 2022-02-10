@@ -1,0 +1,29 @@
+@import "../utilities/mixins";
+@import "../utilities/variables";
+@import "./wind";
+@import "./humidity";
+@import "./visibility";
+
+h2 {
+    font-size: $fs-24;
+    font-weight: 700;
+    color: $font-white;
+    padding-bottom: 2rem;
+}
+
+.highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(328px, 1fr));;
+    grid-gap: 3rem;
+    justify-content: space-between;
+
+    &>* {
+        @include flex(column, space-between, center);
+        background-color: $bg-blue;
+        padding: 1.375rem 3.0625rem;
+    }
+
+    .humidity {
+        padding-bottom: 2.5625rem;
+    }
+}

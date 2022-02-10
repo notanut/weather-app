@@ -1,0 +1,93 @@
+@import "../utilities/mixins";
+@import "../utilities/variables";
+
+.search {
+    padding: 1.25rem;
+    // max-width: 366px;
+
+    .wrapper {
+        @include flex(row, flex-end, center);
+        width: 100%;
+    }
+
+    &__close {
+        @include button(transparent, flex);
+
+        .material-icons {
+            color: $font-white;
+        }
+    }
+
+    &__bar {
+        display: grid;
+        margin: 45px 0;
+        grid-template-columns: 3fr 1fr;
+        gap: .75rem;
+        // max-width: 268px;
+        &__input {
+            @include flex(row, flex-start, center);
+            padding: 0.9375rem;
+            border: 1px solid $font-white;
+            gap: 1rem;
+
+            .material-icons {
+                color: #616475;
+            }
+
+            input {
+                background: none;
+                border: none;
+                outline: none;
+                color: $font-white;
+
+                &::placeholder {
+                    color: #616475;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        button {
+            @include button(#3C47E9, flex);
+            justify-content: center;
+            padding: 1em;
+            color: $font-white;
+            font-weight: 600;
+        }
+    }
+
+    &__lists {
+        @include flex(column, flex-start, flex-start);
+        gap: 2rem;
+        
+        &__list {
+            @include flex(row, space-between, center);
+            padding:1.375rem 0.9375rem ;
+            width: 100%;
+            border: 1px solid transparent;
+            transition: all .3s ease-in;
+            cursor: pointer;
+
+            // .material-icons {
+            //     display: none;
+            // }
+
+            &:hover {
+                border-color: #616475;
+            }
+            // &:hover + .material-icons{
+            //     display: inline-block;
+            // }
+        }
+    }
+
+    &__error {
+        padding: 1.375rem 0.9375rem;
+    }
+}
+
+@media (max-width: 475px) {
+    .search {
+        padding: 1.125rem .75rem;
+    }
+}

@@ -1,0 +1,35 @@
+@import "../utilities/mixins";
+@import "../utilities/variables";
+@import "./cards";
+@import "./highlights";
+@import "./footer";
+
+main {
+    margin: 0 auto;
+  padding: 2.625rem 1.5rem;
+  max-width: 800px;
+  width: 100%;
+
+  .switches {
+    @include flex(row, flex-end, center, 0.75rem);
+    & > * {
+      @include button($bg-gray-blue, flex);
+      @include flex(row, center, center);
+      border-radius: 50%;
+      color: $font-white;
+      font-weight: 700;
+      font-size: $fs-18;
+      padding: 0.45em 0.75em;
+      transition: all .3s ease-in;
+
+      &.active {
+        background-color: $font-white;
+        color: #110e3c;
+      }
+
+      &:hover {
+        opacity: .75;
+      }
+    }
+  }
+}

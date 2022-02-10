@@ -1,0 +1,45 @@
+@import "../utilities/mixins";
+@import "../utilities/variables";
+
+.wind {
+    &__heading {
+        font-weight: 500;
+        font-size: $fs-16;
+        color: $font-white;
+        text-align: center;
+    }
+
+    &__amount {
+        @include flex(row, center, baseline);
+
+        h2 {
+            font-weight: 700;
+            font-size: $fs-64;
+        }
+
+        span {
+            font-weight: 500;
+            font-size: $fs-36;
+        }
+    }
+
+    &__direction {
+        @include flex(row, center, center);
+        gap: 5.71px;
+
+        span {
+            transform: rotate(-150deg);
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            padding: 5.5px;
+        }
+        .material-icons {
+            font-size: $fs-18;
+        }
+
+        p {
+            font-weight: 500;
+            font-size: $fs-14;
+        }
+    }
+}

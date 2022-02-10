@@ -1,0 +1,28 @@
+@import "../utilities/mixins";
+@import "../utilities/variables";
+
+.visibility, .airpressure {
+    height: 159px;
+    
+    &__heading {
+        font-weight: 500;
+        font-size: $fs-16;
+        color: $font-white;
+        text-align: center;
+    }
+
+    &__amount {
+        @include flex(row, center, baseline);
+        gap: 1rem;
+
+        h2 {
+            font-weight: 700;
+            font-size: $fs-64;
+        }
+
+        span {
+            font-weight: 500;
+            font-size: $fs-36;
+        }
+    }
+}

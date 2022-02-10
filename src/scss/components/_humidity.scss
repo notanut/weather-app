@@ -1,0 +1,48 @@
+@import "../utilities/mixins";
+@import "../utilities/variables";
+
+.humidity {
+  &__heading {
+    font-weight: 500;
+    font-size: $fs-16;
+    color: $font-white;
+    text-align: center;
+  }
+
+  &__amount {
+    @include flex(row, center, baseline);
+
+    h2 {
+      font-weight: 700;
+      font-size: $fs-64;
+      padding-bottom: .75rem;
+    }
+
+    span {
+      font-weight: 500;
+      font-size: $fs-36;
+    }
+  }
+
+  &__bar {
+    position: relative;
+      min-width: 100%;
+
+      .css-eglki6-MuiLinearProgress-root {
+          height: .5rem;
+          background-color: $font-white;
+          border-radius: 80px;
+      }
+      .css-5xe99f-MuiLinearProgress-bar1 {
+          background: #FFEC65;
+      }
+
+      &__num {
+        @include flex(row, space-between, center);
+      }
+      
+      &__icon {
+        @include flex(row, flex-end, center);
+      }
+  }
+}

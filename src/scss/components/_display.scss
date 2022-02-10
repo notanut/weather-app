@@ -1,0 +1,113 @@
+@import "../utilities/mixins";
+@import "../utilities/variables";
+
+.app {
+  margin: 0;
+}
+
+.display {
+  // margin: 0 auto;
+
+  &__nav {
+    @include flex(row, space-between, center);
+    padding: 2.625rem 2.875rem;
+
+    & > * {
+      @include button($bg-gray, flex);
+      color: $font-white;
+      padding: 0.5em;
+      transition: .3s ease-in;
+
+      &:hover {
+        opacity: .8;
+      }
+    }
+
+    &__currentLoc {
+      border-radius: 50%;
+    }
+
+    &__search {
+      padding: 0.5em 1em;
+    }
+  }
+
+  &__main {
+    // &>* {
+    //     margin: 0 auto;
+    // }
+
+    &__wrapper {
+      position: relative;
+      min-height: 400px;
+      @include flex(row, center, center);
+
+      &__bg {
+        background: url(./images/Cloud-background.png) no-repeat center center;
+        background-size: cover;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        filter: brightness(0) saturate(100%) invert(13%) sepia(5%)
+          saturate(5211%) hue-rotate(196deg) brightness(94%) contrast(86%);
+      }
+      &__image {
+        position: relative;
+        height: 100%;
+      }
+    }
+
+    &__temp {
+      @include flex(row, center, baseline);
+
+      h1 {
+        font-size: $fs-144;
+        font-weight: 500;
+      }
+
+      span {
+        color: #a09fb1;
+        font-size: 3rem;
+        font-weight: 500;
+      }
+    }
+  }
+
+  &__footer {
+    @include flex(column, center, center);
+    color: #88869d;
+
+    &__name {
+      color: #a09fb1;
+      text-transform: capitalize;
+      font-weight: 600;
+      font-size: $fs-36;
+      padding: 5.4375rem 0;
+    }
+
+    &__date,
+    &__loc {
+      font-weight: 500;
+      font-size: $fs-18;
+      line-height: 21px;
+    }
+
+    &__date {
+      padding-bottom: 2rem;
+      @include flex(row, center, center, 1rem);
+    }
+    
+    &__loc {
+      @include flex(row, center, center, 0.5625rem);
+      padding-bottom: 3.25rem;
+    }
+  }
+}
+
+@media (max-width: 475px) {
+  .display {
+    &__nav {
+      padding: 1.125rem .75rem;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@import "../utilities/mixins";
+@import "../utilities/variables";
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 10%));
+  justify-content: center;
+  margin: 4.5rem 0;
+  column-gap: 1.625rem;
+  row-gap: 2rem;
+
+  .card {
+    background-color: $bg-blue;
+    padding: 1.125rem 1.375rem;
+    max-width: 7.5rem;
+    @include flex(column, space-between, center);
+
+    img {
+      max-width: 53.56px;
+      height: auto;
+      padding: 0.625rem 0 1.5rem;
+    }
+
+    &__temp {
+      @include flex(row, space-between, center);
+      width: 100%;
+    }
+  }
+}
+
+@media (min-width: 1211px) {
+  .cards {
+    justify-content: space-between;
+  }
+}
